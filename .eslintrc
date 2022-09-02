@@ -1,5 +1,3 @@
 {
-  "extends": [
-    "react-native-prettier"
-  ]
+  "extends": ["react-native-prettier"]
 }
