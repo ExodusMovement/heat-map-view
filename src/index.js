@@ -7,6 +7,7 @@ export async function init(config, storage) {
     if (config.divisor) Config.divisor = config.divisor;
     if (config.opacity) Config.opacity = config.opacity;
     if (config.dynamicOpacity) Config.dynamicOpacity = config.dynamicOpacity;
+    if (config.overlayStyle) Config.overlayStyle = config.overlayStyle;
   }
   const HeatView = require("./heatView").default;
   ViewNativeComponent.default = HeatView;

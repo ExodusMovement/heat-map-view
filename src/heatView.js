@@ -6,10 +6,10 @@ import Config from "./config";
 const ViewNativeComponent = require("react-native/Libraries/Components/View/ViewNativeComponent");
 const View = ViewNativeComponent.default;
 
-function heatMapColorForValue(value) {
+function heatMapColorForValue(value, dynamic) {
   if (value > 1) value = 1;
   const h = (1.0 - value) * 240;
-  return "hsl(" + h + ", 100%, 50%)";
+  return `hsla(${h}, 100%, 50%, ${dynamic ? value : Config.opacity})`
 }
 
 const HeatView = forwardRef(({ children, ...props }, ref) => {
@@ -27,7 +27,6 @@ const HeatView = forwardRef(({ children, ...props }, ref) => {
           StyleSheet.absoluteFill,
           {
             backgroundColor: heatMapColorForValue(value),
-            opacity: Config.dynamicOpacity ? value : Config.opacity,
           },
           Config.overlayStyle,
         ]}
