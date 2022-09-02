@@ -1,0 +1,26 @@
+{
+  "name": "@exodus/heat-map-view",
+  "version": "1.0.0",
+  "description": "The most frequently re-rendered view becomes hotter",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "prettier": "eslint . --fix"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "react-native",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ExodusMovement/heat-map-view"
+  },
+  "author": "Alexander Pataridze <s.pataridze@gmailcom>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "5.7.0"
+  }
+}
