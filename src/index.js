@@ -1,14 +1,21 @@
 import Config from "./config";
 
 const ViewNativeComponent = require("react-native/Libraries/Components/View/ViewNativeComponent");
+let installed = false;
 
 export async function init(config, storage) {
-  if (config) {
-    if (config.divisor) Config.divisor = config.divisor;
-    if (config.opacity) Config.opacity = config.opacity;
-    if (config.dynamicOpacity) Config.dynamicOpacity = config.dynamicOpacity;
-    if (config.overlayStyle) Config.overlayStyle = config.overlayStyle;
+  if (!installed) {
+    if (config) {
+      const { divisor, opacity, dynamicOpacity, overlayStyle, skipInstances } =
+        config;
+      if (divisor) Config.divisor = divisor;
+      if (opacity) Config.opacity = opacity;
+      if (dynamicOpacity) Config.dynamicOpacity = dynamicOpacity;
+      if (overlayStyle) Config.overlayStyle = overlayStyle;
+      if (skipInstances) Config.skipInstances = skipInstances;
+    }
+    const HeatView = require("./heatView").default;
+    ViewNativeComponent.default = HeatView;
   }
-  const HeatView = require("./heatView").default;
-  ViewNativeComponent.default = HeatView;
+  installed = true;
 }
