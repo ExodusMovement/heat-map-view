@@ -13,7 +13,7 @@ function heatMapColorForValue(value) {
 }
 
 let instanceCount = 0;
-const HeatView = forwardRef(({ children, ...props }, ref) => {
+const HeatView = forwardRef(({ children, getsHot = true, ...props }, ref) => {
   const instance = useRef(++instanceCount).current;
 
   const renderCountRef = useRef(0);
@@ -21,10 +21,12 @@ const HeatView = forwardRef(({ children, ...props }, ref) => {
 
   const value = renderCountRef.current / Config.divisor;
 
+  getsHot = getsHot && instance > Config.skipInstances
+
   return (
     <View {...props} ref={ref}>
       {children}
-      {instance > Config.skipInstances && (
+      {getsHot && (
         <View
           pointerEvents="none"
           style={[
