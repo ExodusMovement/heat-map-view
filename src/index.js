@@ -3,7 +3,7 @@ import Config from "./config";
 const ViewNativeComponent = require("react-native/Libraries/Components/View/ViewNativeComponent");
 let installed = false;
 
-export async function init(config, storage) {
+export async function initHeatMapView(config, storage) {
   if (!installed) {
     if (config) {
       const { divisor, opacity, dynamicOpacity, overlayStyle, skipInstances } =
