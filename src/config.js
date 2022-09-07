@@ -3,6 +3,7 @@ const Config = {
   opacity: 0.5,
   dynamicOpacity: false,
   overlayStyle: {},
+  surface: 'floor',
   skipInstances: 2,
 };
 

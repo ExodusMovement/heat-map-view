@@ -3,17 +3,9 @@ import Config from "./config";
 const ViewNativeComponent = require("react-native/Libraries/Components/View/ViewNativeComponent");
 let installed = false;
 
-export async function initHeatMapView(config, storage) {
+export async function initHeatMapView(config) {
   if (!installed) {
-    if (config) {
-      const { divisor, opacity, dynamicOpacity, overlayStyle, skipInstances } =
-        config;
-      if (divisor) Config.divisor = divisor;
-      if (opacity) Config.opacity = opacity;
-      if (dynamicOpacity) Config.dynamicOpacity = dynamicOpacity;
-      if (overlayStyle) Config.overlayStyle = overlayStyle;
-      if (skipInstances) Config.skipInstances = skipInstances;
-    }
+    Object.assign(Config, config)
     const HeatView = require("./heatView").default;
     ViewNativeComponent.default = HeatView;
   }
