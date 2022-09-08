@@ -1,6 +1,7 @@
 import React, { useRef, forwardRef } from "react";
 import { StyleSheet } from "react-native";
 import heatMapColorForValue from "./heatMapColorForValue";
+import Config from "./config";
 
 const ViewNativeComponent = require("react-native/Libraries/Components/View/ViewNativeComponent");
 let View = ViewNativeComponent.default;
