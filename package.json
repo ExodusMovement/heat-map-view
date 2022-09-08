@@ -1,6 +1,6 @@
 {
   "name": "@exodus/heat-map-view",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "The most frequently re-rendered view becomes hotter",
   "main": "src/index.js",
   "scripts": {
