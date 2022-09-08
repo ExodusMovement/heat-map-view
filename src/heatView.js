@@ -1,21 +1,14 @@
 import React, { useRef, forwardRef } from "react";
 import { StyleSheet } from "react-native";
-
-import Config from "./config";
+import heatMapColorForValue from "./heatMapColorForValue";
 
 const ViewNativeComponent = require("react-native/Libraries/Components/View/ViewNativeComponent");
 let View = ViewNativeComponent.default;
 
-function heatMapColorForValue(value) {
-  if (value > 1) value = 1;
-  const h = (1.0 - value) * 240;
-  return `hsla(${h}, 100%, 50%, ${
-    Config.dynamicOpacity ? value : Config.opacity
-  })`;
-}
-
 let instanceCount = 0;
 const HeatView = forwardRef(({ children, getsHot = true, ...props }, ref) => {
+  if (!getsHot) return <View {...props} children={children} ref={ref} />;
+
   const instance = useRef(++instanceCount).current;
 
   const renderCountRef = useRef(0);
@@ -27,20 +20,24 @@ const HeatView = forwardRef(({ children, getsHot = true, ...props }, ref) => {
 
   return (
     <View {...props} ref={ref}>
-      {Config.surface === 'ceiling' && children}
+      {Config.surface === "ceiling" && children}
       {getsHot && (
         <View
           pointerEvents="none"
           style={[
             StyleSheet.absoluteFill,
             {
-              backgroundColor: heatMapColorForValue(value),
+              backgroundColor: heatMapColorForValue(
+                value,
+                Config.dynamicOpacity,
+                Config.opacity
+              ),
             },
             Config.overlayStyle,
           ]}
         />
       )}
-      {Config.surface === 'floor' && children}
+      {Config.surface === "floor" && children}
     </View>
   );
 });

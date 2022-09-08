@@ -1,4 +1,5 @@
 import Config from "./config";
+import heatMapColorForValue from "./heatMapColorForValue";
 
 const ViewNativeComponent = require("react-native/Libraries/Components/View/ViewNativeComponent");
 let installed = false;
@@ -12,4 +13,4 @@ function initHeatMapView(config) {
   installed = true;
 }
 
-export { Config, initHeatMapView };
+export { Config, heatMapColorForValue, initHeatMapView };
