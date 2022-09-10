@@ -1,19 +1,20 @@
 # `Heat Map View`
 
-
-![Heat Map View logo](https://raw.githubusercontent.com/ExodusMovement/heat-map-view/master/logo.gif)
+![Heat Map View logo](https://github.com/ExodusMovement/heat-map-view/raw/master/logo.gif)
 
 > Heat up performance offenders! 🔥
 
+<br>
+
 Roughly 80-90% of all React performance issues are caused by re-render related computations. This library enables us to observe components which are re-rendered too frequently in real time.
 
-### Installation
+## Installation
 
 ```sh
 yarn add @exodus/heat-map-view
 ```
 
-#### Usage
+## Usage
 
 Import `initHeatMapView`
 ```js
@@ -48,7 +49,8 @@ useEffect(
 ```
 <br>
 
-### Config
+## Config
+
 | Prop | Default | Params Type | Description |
 | --- | --- | --- | --- |
 | divisor | 30 | number | Render count divisor. Heat is calculated by `renderCount / divisor` = [0-1]. 0 - Blue, 1 - Red. |
@@ -61,7 +63,7 @@ useEffect(
 
 <br>
 
-### Disable/Enable HeatMapView in runtie
+## Disable/Enable HeatMapView in runtime
 
 
 ```js
@@ -102,3 +104,9 @@ function HeatMapViewToggle() {
   )
 }
 ```
+
+<br>
+
+## Roadmap
+- [ ] Dynamic heat style provider
+- [ ] Include examples
