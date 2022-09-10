@@ -1,5 +1,5 @@
 const Config = {
-  divisor: 100,
+  divisor: 30,
   opacity: 0.5,
   dynamicOpacity: false,
   overlayStyle: {},

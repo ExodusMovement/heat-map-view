@@ -3,8 +3,8 @@ import { StyleSheet } from "react-native";
 import heatMapColorForValue from "./heatMapColorForValue";
 import Config from "./config";
 
-const ViewNativeComponent = require("react-native/Libraries/Components/View/ViewNativeComponent");
-let View = ViewNativeComponent.default;
+const View =
+  require("react-native/Libraries/Components/View/ViewNativeComponent").default;
 
 let instanceCount = 0;
 const HeatView = forwardRef(({ children, getsHot = true, ...props }, ref) => {
