@@ -6,6 +6,7 @@
 
 <br>
 
+HeatMapView helps us detect frequently re-rendered views without having phone connected to computer at all times.
 Roughly 80-90% of all React performance issues are caused by re-render related computations. This library enables us to observe components which are re-rendered too frequently in real time.
 
 ## Installation
@@ -56,6 +57,8 @@ useEffect(
 | divisor | 30 | number | Render count divisor. Heat is calculated by `renderCount / divisor` = [0-1]. 0 - Blue, 1 - Red. |
 | dynamicOpacity | false | boolean | Heat makes view less transparent. If enabled 0 - Fully transparent, 1 - Fully opaque.|
 | opacity | 0.5 | number | HeatMap overlay opacity. Disabled if `dynamicOpacity === true` |
+| minHeat | 0 | number | Minimum heat value to be visible. |
+| maxHeat | 1 | number | Maximum heat value to be visible. |
 | overlayStyle | {} | object | Custom overlay style. | 
 | surface | 'floor' | `'floor'\|'ceiling'` | Should heatmap draw on top or bottom of the component. | 
 | skipInstances | 2 | number | Skips initial number view instances. |

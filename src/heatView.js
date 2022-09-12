@@ -17,7 +17,11 @@ const HeatView = forwardRef(({ children, getsHot = true, ...props }, ref) => {
 
   const value = renderCountRef.current / Config.divisor;
 
-  getsHot = getsHot && instance > Config.skipInstances;
+  getsHot =
+    getsHot &&
+    instance > Config.skipInstances &&
+    value >= Config.minHeat &&
+    value <= Config.maxHeat;
 
   return (
     <View {...props} ref={ref}>
