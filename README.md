@@ -58,7 +58,7 @@ useEffect(
 | dynamicOpacity | false | boolean | Heat makes view less transparent. If enabled 0 - Fully transparent, 1 - Fully opaque.|
 | opacity | 0.5 | number | HeatMap overlay opacity. Disabled if `dynamicOpacity === true` |
 | minHeat | 0 | number | Minimum heat value to be visible. |
-| maxHeat | 1 | number | Maximum heat value to be visible. |
+| maxHeat | -1 | number | Maximum heat value to be visible. -1 equals infinity. |
 | overlayStyle | {} | object | Custom overlay style. | 
 | surface | 'floor' | `'floor'\|'ceiling'` | Should heatmap draw on top or bottom of the component. | 
 | skipInstances | 2 | number | Skips initial number view instances. |

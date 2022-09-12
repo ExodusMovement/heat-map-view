@@ -21,7 +21,7 @@ const HeatView = forwardRef(({ children, getsHot = true, ...props }, ref) => {
     getsHot &&
     instance > Config.skipInstances &&
     value >= Config.minHeat &&
-    value <= Config.maxHeat;
+    (Config.maxHeat === -1 || value <= Config.maxHeat);
 
   return (
     <View {...props} ref={ref}>
