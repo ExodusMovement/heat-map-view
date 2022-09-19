@@ -6,7 +6,7 @@ const Config = {
   surface: "floor",
   skipInstances: 2,
   minHeat: 0,
-  maxHeat: 1,
+  maxHeat: -1,
 };
 
 export default Config;
