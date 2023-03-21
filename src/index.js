@@ -2,7 +2,7 @@ import Config from "./config";
 import heatMapColorForValue from "./heatMapColorForValue";
 
 const ViewNativeComponent = require("react-native/Libraries/Components/View/ViewNativeComponent");
-const View = ViewNativeComponent.default;
+ViewNativeComponent.View = ViewNativeComponent.default
 
 let initialized = false;
 let installed = false;
@@ -25,7 +25,7 @@ function installHeatMapView() {
 
 function uninstallHeatMapView() {
   if (installed) {
-    ViewNativeComponent.default = View;
+    ViewNativeComponent.default = ViewNativeComponent.View;
     installed = false;
   }
 }
