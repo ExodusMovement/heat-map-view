@@ -114,4 +114,4 @@ function HeatMapViewToggle() {
 ## Roadmap
 - [ ] Dynamic heat style provider
 - [ ] Heat by velocity (Friction)
-- [ ] Include examples
+- [x] Include example
