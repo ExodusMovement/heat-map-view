@@ -7,7 +7,7 @@
 <br>
 
 HeatMapView helps us detect frequently re-rendered views without having phone connected to computer at all times.
-Roughly 80-90% of all React performance issues are caused by re-render related computations. This library enables us to observe components which are re-rendered too frequently in real time.
+A significant portion of React performance issues are caused by unnecessary re-renders. This library enables us to observe components which are re-rendered too frequently in real time.
 
 ## Installation
 
@@ -29,17 +29,18 @@ Initialize it in `App.js`
 useEffect(
   () => {
     if (ready) {
-      if (qaBuild || __DEV__) {
+      if (__DEV__) {
         initHeatMapView({
+          enabled: true,
           divisor: 20,
-          dynamicOpacity: true, 
+          dynamicOpacity: false, 
           overlayStyle: {
             borderWidth: 1,
             borderColor: 'white',
           },
 
           surface: 'floor',
-          skipInstances: 2,
+          skipInstances: 1,
           opacity: 0.5,
         })
       }
@@ -113,4 +114,4 @@ function HeatMapViewToggle() {
 ## Roadmap
 - [ ] Dynamic heat style provider
 - [ ] Heat by velocity (Friction)
-- [ ] Include examples
+- [x] Include example
