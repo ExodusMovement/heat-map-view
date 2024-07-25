@@ -1,6 +1,6 @@
 {
   "name": "@exodus/heat-map-view",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Heat up performance offenders!",
   "main": "src/index.js",
   "scripts": {

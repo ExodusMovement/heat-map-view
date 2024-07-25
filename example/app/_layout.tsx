@@ -1,3 +1,4 @@
+import { initHeatMapView } from "@exodus/heat-map-view";
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
@@ -11,6 +12,17 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  useEffect(() => {
+    initHeatMapView({
+      divisor: 20,
+      surface: "floor",
+      opacity: 0.2,
+      enabled: true,
+      dynamicOpacity: true,
+    });
+  }, []);
+
+
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),

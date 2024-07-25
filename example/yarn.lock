@@ -867,6 +867,9 @@
   dependencies:
     "@types/hammerjs" "^2.0.36"
 
+"@exodus/heat-map-view@../":
+  version "1.0.13"
+
 "@expo/bunyan@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@expo/bunyan/-/bunyan-4.0.0.tgz#be0c1de943c7987a9fbd309ea0b1acd605890c7b"

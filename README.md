@@ -31,15 +31,16 @@ useEffect(
     if (ready) {
       if (__DEV__) {
         initHeatMapView({
+          enabled: true,
           divisor: 20,
-          dynamicOpacity: true, 
+          dynamicOpacity: false, 
           overlayStyle: {
             borderWidth: 1,
             borderColor: 'white',
           },
 
           surface: 'floor',
-          skipInstances: 2,
+          skipInstances: 1,
           opacity: 0.5,
         })
       }
